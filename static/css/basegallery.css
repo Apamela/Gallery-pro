@@ -3,5 +3,7 @@ h1
   color:skyblue;
   border: 2px solid skyblue;
   padding: 10px;
+  text-align: center;
+  background: url("piper.jpeg");
   border-radius: 25px;
 }
