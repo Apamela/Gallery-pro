@@ -1,4 +1,7 @@
 h1
 {
   color:skyblue;
+  border: 2px solid skyblue;
+  padding: 10px;
+  border-radius: 25px;
 }
