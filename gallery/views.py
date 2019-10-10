@@ -3,18 +3,11 @@ from django.http  import HttpResponse,Http404
 import datetime as dt
 # Create your views here.
 def welcome(request):
-    return render(request,'Welcome.html')
+    return render(request,'welcome.html')
 
 def gallery_of_day(request):
     date = dt.date.today()
-    html = f'''
-        <html>
-            <body>
-                <h1> {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    return render(request,'all-gallery/today-gallery.html',{"date": date,})
 def convert_dates(dates):
 
     # Function that gets the weekday number for the date.
@@ -25,9 +18,7 @@ def convert_dates(dates):
     # Returning the actual day of the week
     day = days[day_number]
     return day
-def gallery_of_day(request):
-    date = dt.date.today()
-    return render(request,'all-gallery/today-gallery.html',{"date": date,})
+
 def past_days_gallery(request,past_date):
     try:    
         # Converts data from the string Url
