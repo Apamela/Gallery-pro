@@ -3,7 +3,12 @@ h1
   color:skyblue;
   border: 2px solid skyblue;
   padding: 10px;
-  text-align: center;
-  background: url("piper.jpeg");
+  width: 200px;
+
+
   border-radius: 25px;
+}
+body{
+  background-image: url("https://thermory.com/wp-content/uploads/2019/07/thermory-ash-pacs-decking2x-1200x700.jpg");
+  background-repeat: no-repeat;
 }

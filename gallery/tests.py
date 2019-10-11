@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Editor,Article,tags
+from .models import Editor,Image,tags,category
 import datetime as dt
 # Create your tests here.
 class EditorTestClass(TestCase):
@@ -15,7 +15,7 @@ class EditorTestClass(TestCase):
         self.james.save_editor()
         editors = Editor.objects.all()
         self.assertTrue(len(editors) > 0)
-class ArticleTestClass(TestCase):
+class ImageTestClass(TestCase):
 
     def setUp(self):
         # Creating a new editor and saving it
@@ -26,20 +26,21 @@ class ArticleTestClass(TestCase):
         self.new_tag = tags(name = 'testing')
         self.new_tag.save()
 
-        self.new_article= Article(title = 'Test Article',post = 'This is a random test Post',editor = self.james)
-        self.new_article.save()
+        self.new_image= Image(title = 'Test Image',post = 'This is a random test Post',editor = self.james)
+        self.new_image.save()
 
-        self.new_article.tags.add(self.new_tag)
+        self.new_image.tags.add(self.new_tag)
 
     def tearDown(self):
         Editor.objects.all().delete()
         tags.objects.all().delete()
-        Article.objects.all().delete()
+        Image.objects.all().delete()
+        category.object.all().delete()
     def test_get_gallery_today(self):
-        today_gallery = Article.todays_gallery()
+        today_gallery = Image.todays_gallery()
         self.assertTrue(len(today_gallery)>0)
     def test_get_gallery_by_date(self):
         test_date = '2019-10-10'
         date = dt.datetime.strptime(test_date, '%Y-%m-%d').date()
-        gallery_by_date = Article.days_gallery(date)
+        gallery_by_date = Image.days_gallery(date)
         self.assertTrue(len(gallery_by_date) == 0)
