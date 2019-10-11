@@ -17,7 +17,14 @@ class tags(models.Model):
     name = models.CharField(max_length =30)
 
     def __str__(self):
-        return self.name   
+        return self.name
+
+    def __str__(self):
+        return self.title
+class category(models.Model):
+    name = models.ForeignKey(category)
+class location(models.Model):
+    name = models.ForeignKey
 class Picture(models.Model):
     title = models.CharField(max_length =60)
     post = models.TextField()
