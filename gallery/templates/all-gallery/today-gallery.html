@@ -9,13 +9,13 @@
     {% for gallery_item in gallery %}
   
     <div class="row">
-      <!-- displaying Gallery articles -->
+      <!-- displaying Gallery picture -->
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <h2 class="text-center"> {{ gallery_item.title }} </h2>
       </div>
-  <!--Display gallery Article images  -->
+  <!--Display gallery Picture images  -->
   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    <img src="{{gallery_item.article_image.url}}" class="img-responsive" alt="Image">
+    <img src="{{gallery_item.picture_image.url}}" class="img-responsive" alt="Image">
   </div>
     </div>
     <!-Some code below--->
