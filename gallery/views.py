@@ -4,7 +4,6 @@ import datetime as dt
 from .models import Picture
 # Create your views here.
 
-
 def gallery_of_day(request):
     date = dt.date.today()
     gallery = Picture.todays_gallery()

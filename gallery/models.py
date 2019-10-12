@@ -24,7 +24,7 @@ class tags(models.Model):
 class category(models.Model):
     name = models.ForeignKey(category)
 class location(models.Model):
-    name = models.ForeignKey
+    name = models.ForeignKey(location)
 class Picture(models.Model):
     title = models.CharField(max_length =60)
     post = models.TextField()
