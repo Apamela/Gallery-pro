@@ -1,5 +1,4 @@
 from django.shortcuts import render,redirect
-
 import datetime as dt
 from .models import Picture
 # Create your views here.
