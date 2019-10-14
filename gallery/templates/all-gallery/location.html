@@ -1,0 +1,24 @@
+% extends 'all-gallery/base.html' %}
+
+{% block content %}
+
+
+{% for picture_item in images %}
+<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    
+     <img src="{{picture_item.picture_image.url}}" data-toggle="modal" class="img-responsive"  alt="Image" >
+     <p> Category: {{picture_item.category}}</p>
+     <p> Name:{{picture_item.name}}</p>
+     <p>Location:{{picture_item.location}}</p>
+    </div>
+ </div>
+ {% empty %}
+ <div class="row">
+   <h2 class="text-center">There No Picture yet</h2>
+ </div>
+ 
+ {% endfor %}
+
+
+
+{% endblock%}

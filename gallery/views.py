@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.http import HttpResponse
 import datetime as dt
 from .models import Picture
 # Create your views here.
@@ -18,9 +19,18 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-gallery/search.html',{"message":message})
-def picture(request):
-    
-        picture = Picture.objects.all()
+
+def picture(request,picture_id):
+    try:
+        picture = Picture.objects.get(id = picture_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"all-gallery/picture.html", {"picture":picture})
+def filter_by_location(request,location_id):
+   
+   pictures = Picture.filter_by_location(id=location_id )
+   return render (request,"all-gallery/location.html", {"pictures":pictures})
+
 def search_results(request):
 
     if 'picture' in request.GET and request.GET["picture"]:
