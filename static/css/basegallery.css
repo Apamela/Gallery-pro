@@ -1,10 +1,11 @@
-h1
+P
 {
   color:skyblue;
   border: 2px solid skyblue;
   padding: 10px;
   width: 500px;
-
+  text-align: center;
+  font-size: 35px;
 
   border-radius: 25px;
 }

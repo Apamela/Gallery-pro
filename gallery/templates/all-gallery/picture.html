@@ -5,8 +5,10 @@
  <div class="container">
 
    <div class="row">
-   <img src="{{picture. picture_image.url}}"  class="img-responsive" alt="Image">
-   </div>
+     {% for picture in gallery %}
+   <img src="{{picture.picture_image.url}}"  class="img-responsive" alt="Image">
+   dddd:{{picture.title}}
+  </div>
 
    <div class="row">
      <h1 class="text-center">{{picture.title}}</h1>
@@ -15,8 +17,9 @@
    <div class="row">
      <p>{{picture.post}}</p>
    </div>
-
+  {% endfor %}
  </div>
+
 
  {% endblock %}
  

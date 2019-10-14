@@ -5,7 +5,9 @@ from .models import Picture
 # Create your views here.
 def welcome(request):
         return render(request,'welcome.html')
-
+def picture(request):
+    gallery= Picture.get_all_pictures()
+    return render (request,'all-gallery/picture.html',{"gallery":gallery})
 
 def search_results(request):
 
@@ -20,12 +22,7 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'all-gallery/search.html',{"message":message})
 
-def picture(request,picture_id):
-    try:
-        picture = Picture.objects.get(id = picture_id)
-    except DoesNotExist:
-        raise Http404()
-    return render(request,"all-gallery/picture.html", {"picture":picture})
+
 def filter_by_location(request,location_id):
    
    pictures = Picture.filter_by_location(id=location_id )
