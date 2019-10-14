@@ -1,4 +1,4 @@
-P
+h2
 {
   color:skyblue;
   border: 2px solid skyblue;
@@ -6,7 +6,6 @@ P
   width: 500px;
   text-align: center;
   font-size: 35px;
-
   border-radius: 25px;
 }
 body{
