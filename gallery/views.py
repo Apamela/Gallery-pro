@@ -22,4 +22,15 @@ def search_results(request):
 def picture(request):
     
         picture = Picture.objects.all()
-    
+def search_results(request):
+
+    if 'picture' in request.GET and request.GET["picture"]:
+        search_term = request.GET.get("category")
+        searched_pictures = Picture.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'all-gallery/search.html',{"message":message,"picture": searched_pictures})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'all-gallery/search.html',{"message":message}) 
