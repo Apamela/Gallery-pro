@@ -28,12 +28,23 @@ class Picture(models.Model):
     location=models. ForeignKey('location',null=True,blank=True)
     def __str__(self):
        return self.title
+    def save_picture(self):
+        self.save()
+    def delete_picture(self):
+        self.delete()
+    def Update_picture(self):
+        self.update()
     
     @classmethod
-    def search_by_title(cls,search_term):
-        gallery = cls.objects.filter(title__icontains=search_term)
-        return gallery
+    def search_by_category(cls,search_term):
+        picture= cls.objects.filter(category__icontains=search_term)
+        return picture
     @classmethod
     def get_all_pictures(cls):
         picture= cls.objects.all()
         return picture
+   
+    @classmethod
+    def filter_by_location(cls, id):
+       picture = Picture.objects.filter(location_id=id)
+       return picture

@@ -10,10 +10,7 @@ class PictureTestClass(TestCase):
       self.gallery_Picture =Picture(title= Test Picture,description='This is random test description',category= self.name)
       self.gallery_Picture.save()
       self.gallery_Picture.location.add(self.gallery_location)
-      def test_add_picture(self):
-          newPicture = Picture()
-          newPicture.save()
-          self.assertTrue(Picture.objects.count(),1)      
+           
     def tearDown(self):
         Picture.objects.all().delete()
         category.object.all().delete()

@@ -9,14 +9,14 @@
  <div class="container">
 
    <div class="row">
-      <h2>Welcome to gallery</h2>
+      <h2 style="text-align:center;font-size:50px;border-radius: 25px;border: 2px solid black;padding:10px">Welcome to gallery</h2>
     
       
      {% for picture in gallery %}
      
     
   
-   <img src="{{picture.picture_image.url}}" data-toggle="modal" data-target="#myModal{{picture.id}}" class="img-responsive" alt="Image">
+   <img src="{{picture.picture_image.url}}" data-toggle="modal" data-target="#myModal{{picture.id}}" class="img-responsive" alt="Image" width="500px">
    <div class="modal fade" id="myModal{{picture.id}}" role="dialog">
       <div class="modal-dialog">
       
