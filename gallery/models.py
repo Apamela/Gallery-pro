@@ -37,8 +37,8 @@ class Picture(models.Model):
     
     @classmethod
     def search_by_category(cls,search_term):
-        picture= cls.objects.filter(category__icontains=search_term)
-        return picture
+        gallery = cls.objects.filter(category__icontains=search_term)
+        return gallery
     @classmethod
     def get_all_pictures(cls):
         picture= cls.objects.all()
